@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context="pt.ipbeja.pdm1.darvoz.DefenisoesUtilizador">
+
+    <!-- Nome do utilizador -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do utilizador"
+            android:textColor="@android:color/background_dark" />
+
+        <EditText
+            android:id="@+id/UserNameEdictText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <!-- Morada Utilizador -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morada Utilizador"
+            android:textColor="@android:color/background_dark" />
+
+        <EditText
+            android:id="@+id/UserAdressEdictText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- Pessoa de contacto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pessoa de contacto"
+            android:textColor="@android:color/background_dark" />
+
+        <EditText
+            android:id="@+id/ContactPersonEdictText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <!-- Telefone / Telemovel da pessoa de contacto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone / Telemovel da pessoa de contacto"
+            android:textColor="@android:color/background_dark" />
+
+        <EditText
+            android:id="@+id/CelfoneContactPersonEdictText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSaveDU"
+            android:layout_width="140dp"
+            android:layout_height="70dp"
+            android:background="@drawable/bt_grava_sai_b"
+            android:onClick="btn_gravar_onclick" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
