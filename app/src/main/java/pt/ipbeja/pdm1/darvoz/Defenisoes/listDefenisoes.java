@@ -1,14 +1,16 @@
-package pt.ipbeja.pdm1.darvoz;
+package pt.ipbeja.pdm1.darvoz.Defenisoes;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import pt.ipbeja.pdm1.darvoz.R;
+import pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo.DefenisoesEntidades;
+import pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo.DefenisoesUtilizador;
 
 public class listDefenisoes extends ListActivity {
 

@@ -19,19 +19,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".listDefenisoes"
+            android:name=".Defenisoes.listDefenisoes"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Marcasao"
+            android:name=".Marcasao.Marcasao"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DefenisoesUtilizador"
+            android:name=".Defenisoes.defenisoes_tipo.DefenisoesUtilizador"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DefenisoesEntidades"
+            android:name=".Defenisoes.defenisoes_tipo.DefenisoesEntidades"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades" />
-        <activity android:name=".Entidades_Ajuda"></activity>
+        <activity android:name=".Entidades.Entidades"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Entidades.tipo_entidades.Entidades_Bombeiros"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Entidades.tipo_entidades.Entidades_PSP"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Entidades.tipo_entidades.Entidades_GNR"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

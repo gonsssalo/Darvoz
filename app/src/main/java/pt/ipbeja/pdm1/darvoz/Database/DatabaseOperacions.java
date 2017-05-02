@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import pt.ipbeja.pdm1.darvoz.Database.tables.tableUserData;
 import pt.ipbeja.pdm1.darvoz.Database.tables.tableEntityData;
 
@@ -17,7 +16,7 @@ import pt.ipbeja.pdm1.darvoz.Database.tables.tableEntityData;
 public class DatabaseOperacions extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Database";
-    public static int database_version = 11;
+    public static int database_version = 17;
 
     public  String TableUser =
             "CREATE TABLE " + tableUserData.TableInfo.TABLE_USER + "("
@@ -26,29 +25,41 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
                     + tableUserData.TableInfo.CONTACT_PERSON + " TEXT, "
                     + tableUserData.TableInfo.CELFONE_CONTACT_PERSON + " TEXT );";
 
+
+
     public  String TableEntity =
-            "CREATE TABLE " + tableEntityData.TableInfo.CONTACT_FIREFIGHTERS + "("
+            "CREATE TABLE " + tableEntityData.TableInfo.TABLE_Entitys + "("
+                    + tableEntityData.TableInfo.CONTACT_FIREFIGHTERS + " TEXT, "
                     + tableEntityData.TableInfo.CONTACT_PSP + " TEXT, "
                     + tableEntityData.TableInfo.CONTACT_1GNR + " TEXT, "
                     + tableEntityData.TableInfo.CONTACT_2GNR + " TEXT, "
                     + tableEntityData.TableInfo.CONTACT_1INTERPRETER + " TEXT, "
                     + tableEntityData.TableInfo.CONTACT_2INTERPRETER + " TEXT );";
 
+
+
     public DatabaseOperacions(Context context) {
         super(context, DATABASE_NAME, null, database_version);
-        Log.d("Database Operacions", "Table Created");
+
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqldb) {
 
-        sqldb.execSQL(TableUser);
         sqldb.execSQL(TableEntity);
+        sqldb.execSQL(TableUser);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + tableEntityData.TableInfo.TABLE_Entitys);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + tableUserData.TableInfo.TABLE_USER);
+        // create new tables
+        onCreate(sqLiteDatabase);
 
     }
 
@@ -82,7 +93,7 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
         cv.put(tableEntityData.TableInfo.CONTACT_1INTERPRETER, contact_1interpreter);
         cv.put(tableEntityData.TableInfo.CONTACT_2INTERPRETER, contact_2interpreter);
 
-        long k = SQ.insert(tableUserData.TableInfo.TABLE_USER, null, cv);
+        long k = SQ.insert(tableEntityData.TableInfo.TABLE_Entitys, null, cv);
 
         Log.d("Database Operacions", "one raw inserted");
     }

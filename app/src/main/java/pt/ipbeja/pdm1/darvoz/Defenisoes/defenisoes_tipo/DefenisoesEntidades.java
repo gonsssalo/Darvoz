@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm1.darvoz;
+package pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo;
 
 import android.database.Cursor;
 import android.os.Build;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.Objects;
 
 import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
+import pt.ipbeja.pdm1.darvoz.R;
 
 
 public class DefenisoesEntidades extends AppCompatActivity {
@@ -101,10 +102,11 @@ public class DefenisoesEntidades extends AppCompatActivity {
 
 
 
-            DatabaseOperacions DB = new DatabaseOperacions(this);
-            DB.delete_inf_Entity(DB);
-            DB.insertInfoEntity(DB, contact_firifighters, contact_PSP, contact_1GNR,
-                    contact_2GNR,contact_1interpreter, contact_2interpreter);
+            DatabaseOperacions DBO = new DatabaseOperacions(this);
+            DBO.delete_inf_Entity(DBO);
+            DBO.insertInfoEntity(DBO,contact_firifighters,contact_PSP,contact_1GNR,contact_2GNR,contact_1interpreter,contact_2interpreter);
+
+            DefenisoesEntidades.super.onBackPressed();
         }
     }
 }

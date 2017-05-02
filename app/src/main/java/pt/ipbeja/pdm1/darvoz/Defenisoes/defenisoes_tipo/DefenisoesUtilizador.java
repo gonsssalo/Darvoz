@@ -1,7 +1,6 @@
-package pt.ipbeja.pdm1.darvoz;
+package pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo;
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 import java.util.Objects;
 
 import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
+import pt.ipbeja.pdm1.darvoz.R;
 
 public class DefenisoesUtilizador extends AppCompatActivity {
 
@@ -92,7 +92,7 @@ public class DefenisoesUtilizador extends AppCompatActivity {
             DB.delete_inf_user(DB);
             DB.insertInfoUser(DB, userName, userAdress, contactPerson, celfoneContacPerson);
 
-
+            DefenisoesUtilizador.super.onBackPressed();
         }
     }
 
