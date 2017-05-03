@@ -16,6 +16,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/imbtn_seguransa_social"
             android:layout_width="0dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/btn_seguransa_social_b"
@@ -24,6 +25,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/imbtn_iefp"
             android:layout_width="0dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/btn_iefp_b"
@@ -32,6 +34,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/imgbtn_at"
             android:layout_width="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -51,6 +54,7 @@
 
 
         <ImageButton
+            android:id="@+id/imgbtn_cs1"
             android:layout_width="0dp"
             android:layout_marginLeft="50dp"
             android:background="@drawable/bt_cs1_b"
@@ -59,6 +63,7 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/imgbtn_cs2"
             android:layout_width="0dp"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"

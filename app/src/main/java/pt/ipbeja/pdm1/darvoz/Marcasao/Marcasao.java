@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import java.util.Calendar;
 import pt.ipbeja.pdm1.darvoz.R;
 
@@ -21,6 +23,10 @@ public class Marcasao extends AppCompatActivity {
     TextView txvw_Entidade;
     TextView txvw_Data;
     TextView txvw_Hora;
+
+
+    int checkButtonStatus;
+    Boolean checkButton [] = new Boolean[]{false, false, false, false, false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,24 +58,89 @@ public class Marcasao extends AppCompatActivity {
 
                     }
                 }, mYear, mMonth, mDay);
-        datePickerDialog.setTitle("Select Date");
+        datePickerDialog.setTitle("Selecione a Data");
         datePickerDialog.show();
 
     }
 
+    public void changebutton(int buttonArraynumber,int imageviewReference , int imageReferenceN1, int imageReferenceN2, String Entity)
+    {
+        for(int i = 0; i < checkButton.length; i++){
+
+            if (!checkButton[i] && !checkButton[buttonArraynumber])
+            {
+                checkButtonStatus = 0;
+
+            }
+
+            if (!checkButton[i] && checkButton[buttonArraynumber])
+            {
+                checkButtonStatus = 1;
+
+            }
+
+            if (checkButton[i] && !checkButton[buttonArraynumber])
+            {
+                checkButtonStatus = 2;
+                i = 6;
+            }
+
+        }//fim ciclo for*/
+
+        ImageButton imageButtonname = (ImageButton) findViewById(imageviewReference);
+        if(checkButtonStatus == 0){
+
+            imageButtonname.setBackgroundResource(imageReferenceN1);
+            txvw_Entidade.setText(Entity);
+            checkButton[buttonArraynumber] = true;
+        }
+        if(checkButtonStatus == 1){
+
+            imageButtonname.setBackgroundResource(imageReferenceN2);
+            txvw_Entidade.setText("Sem Entidade defenida");
+            checkButton[buttonArraynumber] = false;
+        }
+
+        if(checkButtonStatus == 2){
+
+            Toast.makeText(this, "Apenas deve estar selecionado uma entidade", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
     public void btn_ss_onClick(View view) {
+
+
+        changebutton(0,R.id.imbtn_seguransa_social , R.drawable.btn_seguransa_social_p, R.drawable.btn_seguransa_social_b, "Segurança Social");
+
+
+
     }
 
     public void btn_iefp_onClick(View view) {
+
+        changebutton(1,R.id.imbtn_iefp , R.drawable.btn_iefp_p, R.drawable.btn_iefp_b,"Instituto do Emprego e Formação Profissional");
+
+
     }
 
     public void btn_at_onClick(View view) {
+
+        changebutton(2,R.id.imgbtn_at , R.drawable.btn_at_p, R.drawable.bt_at_b, "Autoridade Tributaria e Adoaneira");
+
     }
 
     public void btn_cs1_onClick(View view) {
+
+        changebutton(3,R.id.imgbtn_cs1 , R.drawable.btn_cs1_p, R.drawable.bt_cs1_b, "Centro de Saúde 1");
+
     }
 
     public void btn_cs2_onClick(View view) {
+
+        changebutton(4,R.id.imgbtn_cs2 , R.drawable.btn_cs2_p, R.drawable.bt_cs2_b, "Centro de Saúde 2");
+
     }
 
     public void btn_select_hora_onClick(View view) {
@@ -83,7 +154,7 @@ public class Marcasao extends AppCompatActivity {
                 txvw_Hora.setText(selectedHour + ":" + selectedMinute);
             }
         }, hour, minute, true);//Yes 24 hour time
-        mTimePicker.setTitle("Select Time");
+        mTimePicker.setTitle("Selecione a Hora");
         mTimePicker.show();
 
     }
@@ -94,5 +165,12 @@ public class Marcasao extends AppCompatActivity {
     }
 
     public void btn_enviar_onClick(View view) {
+
+        String data = txvw_Data.getText().toString();
+        String hora = txvw_Hora.getText().toString();
+        String entidade = txvw_Entidade.getText().toString();
+
+        String sms = "pede marcação para atendimento na " + entidade + " para o dia " + data + " às " + hora;
+        Toast.makeText(this, sms, Toast.LENGTH_SHORT).show();
     }
 }
