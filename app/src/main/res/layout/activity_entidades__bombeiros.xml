@@ -19,6 +19,7 @@
         android:orientation="horizontal">
 
         <ImageView
+
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -58,13 +59,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
+
                         android:id="@+id/btn_inc_florestal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_inc_florestal_b"
                         android:onClick="btn_inc_florestal_onClick" />
 
@@ -72,7 +75,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Inc. Florestal" />
+                        android:text="Inc. Rural" />
                     <!-- fim  layout Defeniçoes -->
                 </LinearLayout>
 
@@ -82,13 +85,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_inc_urbano"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_inc_urbano_b"
                         android:onClick="btn_inc_urbano_onClick" />
 
@@ -105,13 +109,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_inund"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_inund_b"
                         android:onClick="btn_inund_onClick" />
 
@@ -136,13 +141,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_colisao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_colisao_b"
                         android:onClick="btn_colisao_onClick" />
 
@@ -160,13 +166,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_atropelamento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_atropelamento_b"
                         android:onClick="btn_atropelamento_onClick" />
 
@@ -183,13 +190,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_capotamento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_capotamento_b"
                         android:onClick="btn_capotamento_onClick" />
 
@@ -212,15 +220,18 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_sem_chave"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_sem_chave_b"
                         android:onClick="btn_sem_chave_onClick" />
 
@@ -238,13 +249,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_fuga_gas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_fuga_gas_b"
                         android:onClick="btn_fuga_gas_onClick" />
 
@@ -261,13 +273,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/btn_toxico"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_toxico_b"
                         android:onClick="btn_toxico_onClick" />
 
@@ -284,7 +297,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:gravity="bottom"
                 android:orientation="horizontal">
                 <!-- layout Defeniçoes -->
@@ -294,8 +307,8 @@
                     android:layout_weight="1"
                     android:gravity="bottom"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
                         android:id="@+id/bt_voltar"
@@ -320,13 +333,13 @@
                     android:layout_weight="1"
                     android:gravity="bottom"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
+                        android:id="@+id/bt_gps"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:id="@+id/bt_gps"
                         android:layout_gravity="center"
                         android:background="@drawable/bt_gps_off"
                         android:onClick="btn_gps_onClick" />
@@ -344,13 +357,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp">
 
                     <ImageButton
+                        android:id="@+id/btn_onde"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:id="@+id/btn_onde"
                         android:layout_gravity="bottom|center"
                         android:background="@drawable/bt_onde_b"
                         android:onClick="btn_onde_onClick" />

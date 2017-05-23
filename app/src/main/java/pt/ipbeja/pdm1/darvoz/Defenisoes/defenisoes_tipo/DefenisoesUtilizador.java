@@ -84,7 +84,7 @@ public class DefenisoesUtilizador extends AppCompatActivity {
         }
 
         else{
-            Toast.makeText(this, "We are good to go", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Guardado com sucesso", Toast.LENGTH_SHORT).show();
 
 
 

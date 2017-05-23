@@ -30,16 +30,22 @@
         <activity
             android:name=".Defenisoes.defenisoes_tipo.DefenisoesEntidades"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades.Entidades"
+        <activity
+            android:name=".Entidades.Entidades"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades.tipo_entidades.Entidades_Bombeiros"
+        <activity
+            android:name=".Entidades.tipo_entidades.Entidades_Bombeiros"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades.tipo_entidades.Entidades_PSP"
+        <activity
+            android:name=".Entidades.tipo_entidades.Entidades_PSP"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades.tipo_entidades.Entidades_GNR"
-            android:screenOrientation="portrait">
-
-        </activity>
+        <activity
+            android:name=".Entidades.tipo_entidades.Entidades_GNR"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Entidades.local"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Creditos"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

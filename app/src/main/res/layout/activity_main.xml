@@ -64,7 +64,8 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <Button
+                    <ImageButton
+                        android:id="@+id/btnEntidade"
                         android:layout_width="wrap_content"
                         android:layout_height="80dp"
                         android:background="@drawable/bt_entidades_b"
@@ -86,8 +87,9 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageButton
+                        android:id="@+id/btnAgenda"
+                        android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:background="@drawable/bt_agenda_b"
                         android:onClick="btnMarcação_onClick" />
@@ -124,8 +126,8 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <Button
-                        android:id="@+id/button"
+                    <ImageButton
+                        android:id="@+id/btnDefenicoes"
                         android:layout_width="wrap_content"
                         android:layout_height="80dp"
                         android:background="@drawable/bt_setup_b"
@@ -148,7 +150,8 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <Button
+                    <ImageButton
+                        android:id="@+id/btncreditos"
                         android:layout_width="wrap_content"
                         android:layout_height="80dp"
                         android:background="@drawable/bt_creditos_a"
@@ -170,7 +173,8 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <Button
+                    <ImageButton
+                        android:id="@+id/btnsair"
                         android:layout_width="wrap_content"
                         android:layout_height="80dp"
                         android:background="@drawable/bt_sair_b"

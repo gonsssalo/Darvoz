@@ -63,8 +63,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_colisao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_colisao_b"
                         android:onClick="btn_colisao_onClick" />
 
@@ -87,8 +88,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_atropelamento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_atropelamento_b"
                         android:onClick="btn_atropelamento_onClick" />
 
@@ -110,8 +112,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_capotamento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_capotamento_b"
                         android:onClick="btn_capotamento_onClick" />
 
@@ -141,8 +144,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_assalto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_assalto_b"
                         android:onClick="btn_assalto_onClick" />
 
@@ -165,8 +169,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_agressao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/bt_agressao_b"
                         android:onClick="bt_agressao_onClick" />
 
@@ -188,8 +193,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_violencia_domestica"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_violencia_domestica_b"
                         android:onClick="btn_violencia_domestica_onClick" />
 
@@ -219,8 +225,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_violasao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_violasao_b"
                         android:onClick="btn_violasao_onClick" />
 
@@ -243,8 +250,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_sequestro"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_sequestro_b"
                         android:onClick="btn_sequestro_onClick" />
 
@@ -268,8 +276,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_burla"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_burla_b"
                         android:onClick="btn_burla_onClick" />
 
@@ -299,8 +308,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_f_residencia"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/btn_f_residencia_b"
                         android:onClick="btn_f_residencia_onClick" />
 
@@ -323,8 +333,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_f_comercial"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/bt_f_comercial_b"
                         android:onClick="btn_f_comercial_onClick" />
 
@@ -348,8 +359,9 @@
 
                     <ImageButton
                         android:id="@+id/btn_f_automovel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/image_size"
+                        android:layout_height="@dimen/image_size"
+                        android:layout_gravity="center"
                         android:background="@drawable/bt_f_automovel_b"
                         android:onClick="bnt_f_automovel_onClick" />
 

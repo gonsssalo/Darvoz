@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pt.ipbeja.pdm1.darvoz.Creditos">
+
+    <TextView
+
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+        android:layout_weight="1"
+    android:text="Agrupamento Nº 2 de Escolas de Beja"
+    android:textStyle="bold"
+    android:textSize="18dp"
+    android:textColor="@color/Black"/>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Centro de Desenvolvimento Tecnológico"
+        android:textSize="18dp"
+        android:textColor="@color/Black"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/logo_2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Escola Secundária D.Manuel I"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Jorge Rodrigues"
+        android:textStyle="bold"
+        android:textColor="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/Black"
+        android:text="jorge.rodrigues@desenvolvemos.pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Tânia Lopes"
+        android:textStyle="bold"
+        android:textColor="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textColor="@color/Black"
+        android:layout_weight="1"
+        android:text="tania.lopes@desenvolvemos.pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+        android:text="Tânia Costa"
+        android:textStyle="bold"
+        android:textColor="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/Black"
+        android:text="tania.costa@desenvolvemos.pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="João Manilhas"
+        android:textStyle="bold"
+        android:textColor="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Escola Secundária Diogo Gouveia"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Daniel Colaço"
+        android:textStyle="bold"
+        android:textColor="@color/Black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/Black"
+        android:text="www.desenvolvemos.pt"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        android:text="Apoios"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@drawable/logo_camera_beja"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@drawable/logo_gnr"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@drawable/logo_psp"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@drawable/logo_bombeiros"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_gravity="center"
+        android:background="@drawable/bt_voltar_b"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:onClick="btn_back_onclick"/>
+
+</LinearLayout>

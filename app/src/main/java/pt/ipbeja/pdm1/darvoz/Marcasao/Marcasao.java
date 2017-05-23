@@ -3,6 +3,10 @@ package pt.ipbeja.pdm1.darvoz.Marcasao;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +16,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import java.util.Calendar;
+import java.util.Objects;
+
 import pt.ipbeja.pdm1.darvoz.R;
 
 
@@ -164,13 +170,47 @@ public class Marcasao extends AppCompatActivity {
         Marcasao.super.onBackPressed();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void btn_enviar_onClick(View view) {
 
+        Boolean smsSend = true;
         String data = txvw_Data.getText().toString();
         String hora = txvw_Hora.getText().toString();
         String entidade = txvw_Entidade.getText().toString();
 
-        String sms = "pede marcação para atendimento na " + entidade + " para o dia " + data + " às " + hora;
-        Toast.makeText(this, sms, Toast.LENGTH_SHORT).show();
+        if (Objects.equals(entidade, "Sem Entidade defenida")){
+
+            Toast.makeText(this, "Selecione uma entidade", Toast.LENGTH_SHORT).show();
+            smsSend = false;
+
+        }
+       else if (Objects.equals(data, "Sem Data defenida")){
+
+            Toast.makeText(this, "Selecione uma data", Toast.LENGTH_SHORT).show();
+            smsSend = false;
+
+        }
+       else if (Objects.equals(hora, "Sem Hora defenida")){
+
+            Toast.makeText(this, "Selecione uma hora", Toast.LENGTH_SHORT).show();
+            smsSend = false;
+
+        }
+        else {
+
+            smsSend = true;
+
+        }
+       if(smsSend){
+
+            String sms = "pede marcação para atendimento na " + entidade + " para o dia " + data + " às " + hora + "H";
+
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + 926345258 + ";" + 926345258));
+            intent.putExtra("sms_body", sms);
+            startActivity(intent);
+
+        }
+
+
     }
 }
