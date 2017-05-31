@@ -141,7 +141,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -149,29 +149,70 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button5"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_psp_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button6"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/btn_bomb_b"
-                            android:paddingRight="10dp" />
+                            <Button
+                                android:id="@+id/btn_psp"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_psp_b"
+                                android:onClick="btn_pspOnClick" />
 
-                        <Button
-                            android:id="@+id/button7"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PSP" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_teatro_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_bomb"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+                                android:background="@drawable/btn_bomb_b"
+                                android:onClick="btn_bombeirosOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bombeiros" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_teatro"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_teatro_b"
+                                android:onClick="btn_teatroOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="teatro" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -180,29 +221,70 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button8"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_cinema_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button9"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/btn_train_sta_b"
-                            android:paddingRight="10dp" />
+                            <Button
+                                android:id="@+id/btn_cine"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_cinema_b"
+                                android:onClick="btn_cinemaOnClick" />
 
-                        <Button
-                            android:id="@+id/button10"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cinema" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_bus_sta_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_est_combo"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+                                android:background="@drawable/btn_train_sta_b"
+                                android:onClick="btn_comboiosOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Est. Comboios" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_rodov"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_bus_sta_b"
+                                android:onClick="btn_rodoviariaOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rodoviaria" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -211,30 +293,131 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button11"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_prisao_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button12"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/btn_castelo_b"
-                            android:paddingRight="10dp" />
+                            <Button
+                                android:id="@+id/btn_prisao"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_prisao_b"
+                                android:onClick="btn_prisaoOnClick" />
 
-                        <Button
-                            android:id="@+id/button13"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Prisão" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paddingRight="10dp"
-                            android:text="Button"
-                            android:visibility="invisible" />
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_castelo"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+                                android:background="@drawable/btn_castelo_b"
+                                android:onClick="btn_casteloOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Castelo" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:visibility="invisible"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_dm"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_dmi_b"
+                                android:onClick="btn_DmanuelOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="E.D.Manuel I" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_mb"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+                                android:background="@drawable/btn_mb_b"
+                                android:onClick="btn_MarioBeiraoOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="E.Mário Beirão" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/btn_dg_b"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_dg_b"
+                                android:onClick="btn_DiogoGouveiaOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="E.Diogo Gouveia" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -243,60 +426,61 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="100dp"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_dmi_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="100dp"
+                            <Button
+                                android:id="@+id/btn_cont"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/btn_cont_b"
+                                android:onClick="btn_ContineteOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Continente" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_mb_b"
-                            android:paddingRight="10dp" />
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/button18"
-                            android:layout_width="wrap_content"
-                            android:layout_height="100dp"
+                            <Button
+                                android:id="@+id/btn_ipbeja"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+                                android:background="@drawable/btn_ipbeja_b"
+                                android:onClick="btn_ipBejaOnClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="IPBeja" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/btn_dg_b"
-                            android:paddingRight="10dp" />
-                    </LinearLayout>
+                            android:gravity="center"
+                            android:visibility="invisible"
+                            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button16"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/btn_cont_b"
-                            android:paddingRight="10dp" />
+                        </LinearLayout>
 
-                        <Button
-                            android:id="@+id/button17"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/btn_ipbeja_b"
-                            android:paddingRight="10dp" />
-
-                        <Button
-                            android:id="@+id/button19"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_weight="1"
-                            android:paddingRight="10dp"
-                            android:visibility="invisible" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -344,7 +528,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/bt_gps_off"
-                android:onClick="btn_voltar_onClick" />
+                android:onClick="btn_gps_onClick" />
 
             <TextView
                 android:layout_width="wrap_content"

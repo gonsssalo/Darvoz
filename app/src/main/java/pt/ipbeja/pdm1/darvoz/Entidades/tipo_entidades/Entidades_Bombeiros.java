@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import pt.ipbeja.pdm1.darvoz.Entidades.Entidades;
 import pt.ipbeja.pdm1.darvoz.Entidades.local;
@@ -132,7 +133,32 @@ public class Entidades_Bombeiros extends AppCompatActivity {
 
     public void btn_onde_onClick(View view) {
 
-        Intent intent = new Intent(Entidades_Bombeiros.this, local.class);
-        startActivity(intent);
+       /* for(int i = 0; i < checkButtons.length ; i++){
+
+
+
+            if (checkButtons[i])
+            {*/
+                Intent intent = new Intent(Entidades_Bombeiros.this, local.class);
+                startActivity(intent);
+           /* }
+
+            if(!checkButtons[checkButtons.length-1])
+            {
+
+                if(i == checkButtons.length -1){
+                    Toast.makeText(this, "selecione", Toast.LENGTH_SHORT).show();
+                }
+                else{
+
+                }
+
+            }
+
+
+            }//ciclo for*/
+
+
+
     }
 }

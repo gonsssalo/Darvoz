@@ -33,7 +33,7 @@ public class Marcasao extends AppCompatActivity {
 
     int checkButtonStatus;
     Boolean checkButton [] = new Boolean[]{false, false, false, false, false};
-
+    int bottonnumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,8 +87,9 @@ public class Marcasao extends AppCompatActivity {
 
             if (checkButton[i] && !checkButton[buttonArraynumber])
             {
+                bottonnumber = i;
                 checkButtonStatus = 2;
-                i = 6;
+                i = checkButton.length;
             }
 
         }//fim ciclo for*/
@@ -173,7 +174,7 @@ public class Marcasao extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void btn_enviar_onClick(View view) {
 
-        Boolean smsSend = true;
+        Boolean smsSend;
         String data = txvw_Data.getText().toString();
         String hora = txvw_Hora.getText().toString();
         String entidade = txvw_Entidade.getText().toString();
