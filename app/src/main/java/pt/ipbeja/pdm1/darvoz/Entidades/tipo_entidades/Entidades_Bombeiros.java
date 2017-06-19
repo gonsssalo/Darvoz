@@ -10,14 +10,23 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import pt.ipbeja.pdm1.darvoz.Entidades.Entidades;
 import pt.ipbeja.pdm1.darvoz.Entidades.local;
 import pt.ipbeja.pdm1.darvoz.R;
 
 public class Entidades_Bombeiros extends AppCompatActivity {
+    public static boolean next = true;
+String entity = "Bombeiros";
     ImageButton imgBtn;
     int Bottonsize;
     int spacebethinbutons;
+
+    String nomeSituaçoes[] = new String[]
+            {"Incêndio florestal", "Incêndio urbano", "Inundação", "Acidente rodoviario", "Atropelamento", "Capotamento",
+            "Abertura de porta", "Fuga de gás", "Acidentes com matérias perigosas"};
+
     android.widget.LinearLayout.LayoutParams lp;
     Boolean checkButtons [] = new Boolean[]{false, false, false, false, false, false, false, false, false};
     int bottonsviewid[] = new int[]{
@@ -85,6 +94,7 @@ public class Entidades_Bombeiros extends AppCompatActivity {
 
     public void btn_inc_urbano_onClick(View view) {
 
+
         changeButton( 1,bottonsviewid[1],R.drawable.btn_inc_urbano_b, R.drawable.btn_inc_urbano_p );
     }
 
@@ -130,33 +140,40 @@ public class Entidades_Bombeiros extends AppCompatActivity {
 
     public void btn_gps_onClick(View view) {
     }
-
     public void btn_onde_onClick(View view) {
 
-       /* for(int i = 0; i < checkButtons.length ; i++){
+        ArrayList<String> AcidentsList = new ArrayList<String>();
+        for(int i = 0; i < checkButtons.length ; i++){
 
 
 
-            if (checkButtons[i])
-            {*/
-                Intent intent = new Intent(Entidades_Bombeiros.this, local.class);
-                startActivity(intent);
-           /* }
-
-            if(!checkButtons[checkButtons.length-1])
+            if (checkButtons[i] == true )
             {
+                next = false;
 
-                if(i == checkButtons.length -1){
-                    Toast.makeText(this, "selecione", Toast.LENGTH_SHORT).show();
-                }
-                else{
-
-                }
+                AcidentsList.add(nomeSituaçoes[i]); //this adds an element to the list.
 
             }
 
+            if( i == checkButtons.length -1 && next == true)
+            {
+                Toast.makeText(this, "Selecione pelo menos um incidente", Toast.LENGTH_SHORT).show();
+            }
 
-            }//ciclo for*/
+            if( i == checkButtons.length -1 && next == false)
+            {
+                Intent intent = new Intent(Entidades_Bombeiros.this, local.class);
+                intent.putExtra("acidents",AcidentsList);
+                intent.putExtra("entity",entity);
+
+                startActivity(intent);
+            }
+            else{
+
+            }
+
+        }//ciclo for
+
 
 
 

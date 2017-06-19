@@ -5,13 +5,12 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import pt.ipbeja.pdm1.darvoz.Entidades.Entidades;
-import pt.ipbeja.pdm1.darvoz.Defenisoes.listDefenisoes;
+import pt.ipbeja.pdm1.darvoz.Defenicoes.listDefenicoes;
 import pt.ipbeja.pdm1.darvoz.Marcasao.Marcasao;
 
 public class MainActivity extends AppCompatActivity {
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnDefenições_onClick(View view) {
 
-        Intent in = new Intent(this, listDefenisoes.class);
+        Intent in = new Intent(this, listDefenicoes.class);
         startActivity(in);
 
 
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnCreditos_onClick(View view) {
 
-        Intent in = new Intent(this, Creditos.class);
+        Intent in = new Intent(this, Mapa.class);
         startActivity(in);
     }
 

@@ -7,12 +7,17 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import pt.ipbeja.pdm1.darvoz.Entidades.local;
 import pt.ipbeja.pdm1.darvoz.R;
 
 public class Entidades_GNR extends AppCompatActivity {
     ImageButton imgBtn;
+    public static boolean next = true;
+    String entity = "GNR";
     int Bottonsize;
     int spacebethinbutons;
     android.widget.LinearLayout.LayoutParams lp;
@@ -30,6 +35,10 @@ public class Entidades_GNR extends AppCompatActivity {
             R.id.btn_f_comercial,
             R.id.btn_f_automovel};
 
+    String nomeSituaçoes[] = new String[]
+            {"Colisão","Atropelamento","Despiste/Capotamento","Roubo na via pública","Agressôes",
+            "Violência doméstica", "Violação","Sequestro", "Burla", "Roubo interior residencia",
+             "Roubo interior estabelicimento comercial","Roubo interior viatura" };
 
     Boolean checkButtons [] = new Boolean[]
                    {false, false, false,
@@ -81,8 +90,38 @@ public class Entidades_GNR extends AppCompatActivity {
 
     public void btn_onde_onClick(View view) {
 
-        Intent intent = new Intent(Entidades_GNR.this, local.class);
-        startActivity(intent);
+        ArrayList<String> AcidentsList = new ArrayList<String>();
+        for(int i = 0; i < checkButtons.length ; i++){
+
+
+
+            if (checkButtons[i] == true )
+            {
+                next = false;
+
+                AcidentsList.add(nomeSituaçoes[i]); //this adds an element to the list.
+
+            }
+
+            if( i == checkButtons.length -1 && next == true)
+            {
+                Toast.makeText(this, "Selecione pelo menos um incidente", Toast.LENGTH_SHORT).show();
+            }
+
+            if( i == checkButtons.length -1 && next == false)
+            {
+                Intent intent = new Intent(Entidades_GNR.this, local.class);
+                intent.putExtra("acidents",AcidentsList);
+                intent.putExtra("entity",entity);
+                startActivity(intent);
+            }
+            else{
+
+            }
+
+        }//ciclo for
+
+
 
     }
 

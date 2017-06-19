@@ -11,15 +11,23 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import pt.ipbeja.pdm1.darvoz.Creditos;
+import pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades.Entidades_Bombeiros;
+import pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades.Entidades_GNR;
+import pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades.Entidades_PSP;
+import pt.ipbeja.pdm1.darvoz.Mapa;
 import pt.ipbeja.pdm1.darvoz.R;
 
 public class local extends AppCompatActivity {
+
     int bottonsviewid[] = new int[]{
             R.id.btn_casa,
             R.id.btn_perto,
             R.id.btn_mapa,
             R.id.btn_gps};
-
+    ArrayList<String> AcidentsList;
     int checkButtonStatus;
     Boolean checkButtonLocation[] = new Boolean[]{false, false, false, false, false,
                                                   false, false, false, false, false,
@@ -30,6 +38,11 @@ public class local extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local);
+
+
+
+
+
     }
 
     public void changeButton(int posicionArray,int idImageButton,int drawableNp, int drawableP ) {
@@ -114,7 +127,12 @@ public class local extends AppCompatActivity {
 
 
         changeButton( 2,bottonsviewid[2],R.drawable.btn_mapa_b, R.drawable.btn_mapa_p );
-    }
+if (checkButtons[2]==true){
+    Intent in = new Intent(local.this, Mapa.class);
+    startActivity(in);
+}
+        }
+
 
     public void btn_gps_onclick(View view) {
         changeButton( 3,bottonsviewid[3],R.drawable.btn_gps_b, R.drawable.bt_gps_p );
@@ -183,11 +201,38 @@ public class local extends AppCompatActivity {
 
     }
 
+
+
     public void btn_enviar_onClick(View view) {
+
+
+        Intent intn = getIntent();
+        AcidentsList = intn.getStringArrayListExtra("acidents");
+        String entity = intn.getStringExtra("entity");
+        String sms2 = "";
+        for(int i = 0; i < AcidentsList.size(); i++){
+
+            sms2 += AcidentsList.get(i)+ ", ";
+
+
+
+        }
+
+        String finalSms = "pede ajuda para situação de " + sms2 + "e está perto " + "sitio";
+        Toast.makeText(this, finalSms, Toast.LENGTH_LONG).show();
+
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + 926345258 + ";" + 926345258));
+        intent.putExtra("sms_body", finalSms);
+        startActivity(intent);
+
     }
 
     public void btn_voltar_onClick(View view) {
         super.onBackPressed();
+         Entidades_Bombeiros.next = true;
+        Entidades_PSP.next = true;
+        Entidades_GNR.next = true;
     }
 
 

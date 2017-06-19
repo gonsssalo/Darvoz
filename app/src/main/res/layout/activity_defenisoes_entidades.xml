@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="top|center"
     android:orientation="vertical"
-    tools:context="pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo.DefenisoesEntidades">
+    tools:context="pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.DefenicoesEntidades">
 
     <!-- Contacto Bombeiros -->
     <LinearLayout

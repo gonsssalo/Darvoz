@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo;
+package pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo;
 
 import android.database.Cursor;
 import android.os.Build;
@@ -15,7 +15,7 @@ import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
 import pt.ipbeja.pdm1.darvoz.R;
 
 
-public class DefenisoesEntidades extends AppCompatActivity {
+public class DefenicoesEntidades extends AppCompatActivity {
 
     EditText CONTACT_FIREFIGHTERS, CONTACT_PSP, CONTACT_1GNR, CONTACT_2GNR,CONTACT_1INTERPRETER,CONTACT_2INTERPRETER;
     String contact_firifighters, contact_PSP, contact_1GNR, contact_2GNR, contact_1interpreter, contact_2interpreter;
@@ -106,7 +106,7 @@ public class DefenisoesEntidades extends AppCompatActivity {
             DBO.delete_inf_Entity(DBO);
             DBO.insertInfoEntity(DBO,contact_firifighters,contact_PSP,contact_1GNR,contact_2GNR,contact_1interpreter,contact_2interpreter);
 
-            DefenisoesEntidades.super.onBackPressed();
+            DefenicoesEntidades.super.onBackPressed();
         }
     }
 }

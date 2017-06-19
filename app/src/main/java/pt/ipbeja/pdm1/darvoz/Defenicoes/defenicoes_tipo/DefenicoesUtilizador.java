@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm1.darvoz.Defenisoes.defenisoes_tipo;
+package pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo;
 
 import android.database.Cursor;
 import android.os.Build;
@@ -14,7 +14,7 @@ import java.util.Objects;
 import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
 import pt.ipbeja.pdm1.darvoz.R;
 
-public class DefenisoesUtilizador extends AppCompatActivity {
+public class DefenicoesUtilizador extends AppCompatActivity {
 
     EditText USER_NAME, USER_ADRESS, CONTACT_PERSON, CELFONE_CONTACT_PERSON;
     String userName, userAdress, contactPerson, celfoneContacPerson;
@@ -92,7 +92,7 @@ public class DefenisoesUtilizador extends AppCompatActivity {
             DB.delete_inf_user(DB);
             DB.insertInfoUser(DB, userName, userAdress, contactPerson, celfoneContacPerson);
 
-            DefenisoesUtilizador.super.onBackPressed();
+            DefenicoesUtilizador.super.onBackPressed();
         }
     }
 

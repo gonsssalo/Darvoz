@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.ipbeja.pdm1.darvoz">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -19,16 +24,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Defenisoes.listDefenisoes"
+            android:name=".Defenicoes.listDefenicoes"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Marcasao.Marcasao"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Defenisoes.defenisoes_tipo.DefenisoesUtilizador"
+            android:name=".Defenicoes.defenicoes_tipo.DefenicoesUtilizador"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Defenisoes.defenisoes_tipo.DefenisoesEntidades"
+            android:name=".Defenicoes.defenicoes_tipo.DefenicoesEntidades"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Entidades.Entidades"
@@ -42,10 +47,28 @@
         <activity
             android:name=".Entidades.tipo_entidades.Entidades_GNR"
             android:screenOrientation="portrait" />
-        <activity android:name=".Entidades.local"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Creditos"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Entidades.local"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Creditos"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Mapa" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCgE37C43uBYY_ZnZGKffOTpfTPySF-zY0" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>
