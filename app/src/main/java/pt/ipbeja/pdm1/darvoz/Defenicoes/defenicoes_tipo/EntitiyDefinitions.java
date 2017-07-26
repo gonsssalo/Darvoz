@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
+import pt.ipbeja.pdm1.darvoz.Database.OperationsDatabase;
 import pt.ipbeja.pdm1.darvoz.R;
 
 
-public class DefenicoesEntidades extends AppCompatActivity {
+public class EntitiyDefinitions extends AppCompatActivity {
 
     EditText CONTACT_FIREFIGHTERS, CONTACT_PSP, CONTACT_1GNR, CONTACT_2GNR,CONTACT_1INTERPRETER,CONTACT_2INTERPRETER;
     String contact_firifighters, contact_PSP, contact_1GNR, contact_2GNR, contact_1interpreter, contact_2interpreter;
@@ -24,6 +24,8 @@ public class DefenicoesEntidades extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defenisoes_entidades);
+
+        getSupportActionBar().setTitle("Darvoz - Defenições Entidade");
 
         CONTACT_FIREFIGHTERS = (EditText) findViewById(R.id.editTextBombeiros);
         CONTACT_PSP = (EditText) findViewById(R.id.editTextPSP);
@@ -38,7 +40,7 @@ public class DefenicoesEntidades extends AppCompatActivity {
     public void getEntityInfo () {
 
         try {
-            DatabaseOperacions DOP = new DatabaseOperacions(this);
+            OperationsDatabase DOP = new OperationsDatabase(this);
             Cursor CR = DOP.getEntityInformation(DOP);
             CR.moveToFirst();
 
@@ -102,11 +104,11 @@ public class DefenicoesEntidades extends AppCompatActivity {
 
 
 
-            DatabaseOperacions DBO = new DatabaseOperacions(this);
+            OperationsDatabase DBO = new OperationsDatabase(this);
             DBO.delete_inf_Entity(DBO);
             DBO.insertInfoEntity(DBO,contact_firifighters,contact_PSP,contact_1GNR,contact_2GNR,contact_1interpreter,contact_2interpreter);
 
-            DefenicoesEntidades.super.onBackPressed();
+            EntitiyDefinitions.super.onBackPressed();
         }
     }
 }

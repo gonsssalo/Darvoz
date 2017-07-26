@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import pt.ipbeja.pdm1.darvoz.Entidades.Entidades;
-import pt.ipbeja.pdm1.darvoz.Defenicoes.listDefenicoes;
-import pt.ipbeja.pdm1.darvoz.Marcasao.Marcasao;
+import pt.ipbeja.pdm1.darvoz.Entities.Entidades;
+import pt.ipbeja.pdm1.darvoz.Defenicoes.DefinitionsList;
+import pt.ipbeja.pdm1.darvoz.Marking.Marking;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton imgBtn;
@@ -66,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnMarcação_onClick(View view) {
-        Intent in = new Intent(this, Marcasao.class);
+        Intent in = new Intent(this, Marking.class);
         startActivity(in);
     }
 
     public void btnDefenições_onClick(View view) {
 
-        Intent in = new Intent(this, listDefenicoes.class);
+        Intent in = new Intent(this, DefinitionsList.class);
         startActivity(in);
 
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnCreditos_onClick(View view) {
 
-        Intent in = new Intent(this, Mapa.class);
+        Intent in = new Intent(this, Credits.class);
         startActivity(in);
     }
 

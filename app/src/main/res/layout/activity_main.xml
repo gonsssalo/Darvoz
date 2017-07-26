@@ -137,11 +137,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Defeniçoes" />
+                        android:text="Defenições" />
                     <!-- fim  layout Defeniçoes -->
                 </LinearLayout>
 
-                <!--  layout Creditos -->
+                <!--  layout Credits -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Creditos" />
-                    <!-- fim  layout Creditos -->
+                    <!-- fim  layout Credits -->
                 </LinearLayout>
                 <!-- layout Sair -->
                 <LinearLayout

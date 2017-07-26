@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades;
+package pt.ipbeja.pdm1.darvoz.Entities.tipo_entidades;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +11,15 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pt.ipbeja.pdm1.darvoz.Entidades.local;
+import pt.ipbeja.pdm1.darvoz.Entities.Local;
 import pt.ipbeja.pdm1.darvoz.R;
 
-public class Entidades_PSP extends AppCompatActivity {
+public class PSP extends AppCompatActivity {
 
     ImageButton imgBtn;
     int Bottonsize;
     public static boolean next = true;
-    String entity = "PSP";
+    int entity = 1;
     int spacebethinbutons;
     android.widget.LinearLayout.LayoutParams lp;
     int bottonsviewid[] = new int[]{
@@ -53,6 +53,7 @@ public class Entidades_PSP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entidades__psp);
 
+        getSupportActionBar().setTitle("Darvoz - PSP");
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         spacebethinbutons = displayMetrics.widthPixels /  20;
@@ -112,7 +113,7 @@ public class Entidades_PSP extends AppCompatActivity {
 
                 if( i == checkButtons.length -1 && next == false)
                 {
-                    Intent intent = new Intent(Entidades_PSP.this, local.class);
+                    Intent intent = new Intent(PSP.this, Local.class);
                     intent.putExtra("acidents",AcidentsList);
                     intent.putExtra("entity",entity);
                     startActivity(intent);
@@ -130,7 +131,7 @@ public class Entidades_PSP extends AppCompatActivity {
 
     public void bt_voltar_onClick(View view) {
 
-        Entidades_PSP.super.onBackPressed();
+        PSP.super.onBackPressed();
     }
 
     public void btn_colisao_onClick(View view) {

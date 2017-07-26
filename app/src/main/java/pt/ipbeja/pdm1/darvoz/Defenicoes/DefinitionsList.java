@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import pt.ipbeja.pdm1.darvoz.R;
-import pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.DefenicoesEntidades;
-import pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.DefenicoesUtilizador;
+import pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.EntitiyDefinitions;
+import pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.UserDefinitions;
 
-public class listDefenicoes extends ListActivity {
+public class DefinitionsList extends ListActivity {
 
     String[] D_List = {"Utilizador", "Entidades"};
 
@@ -33,12 +33,12 @@ public class listDefenicoes extends ListActivity {
 
                 if (position == 0)
                 {
-                    Intent intent = new Intent(listDefenicoes.this, DefenicoesUtilizador.class);
+                    Intent intent = new Intent(DefinitionsList.this, UserDefinitions.class);
                     startActivity(intent);
                 }
                 else{
 
-                    Intent intent = new Intent(listDefenicoes.this, DefenicoesEntidades.class);
+                    Intent intent = new Intent(DefinitionsList.this, EntitiyDefinitions.class);
                     startActivity(intent);
                 }
 

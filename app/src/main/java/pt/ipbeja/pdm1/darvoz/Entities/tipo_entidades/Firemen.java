@@ -1,7 +1,6 @@
-package pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades;
+package pt.ipbeja.pdm1.darvoz.Entities.tipo_entidades;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,13 +11,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pt.ipbeja.pdm1.darvoz.Entidades.Entidades;
-import pt.ipbeja.pdm1.darvoz.Entidades.local;
+import pt.ipbeja.pdm1.darvoz.Entities.Local;
 import pt.ipbeja.pdm1.darvoz.R;
 
-public class Entidades_Bombeiros extends AppCompatActivity {
+public class Firemen extends AppCompatActivity {
     public static boolean next = true;
-String entity = "Bombeiros";
+int entity = 0;
     ImageButton imgBtn;
     int Bottonsize;
     int spacebethinbutons;
@@ -45,7 +43,7 @@ String entity = "Bombeiros";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entidades__bombeiros);
 
-
+        getSupportActionBar().setTitle("Darvoz - Bombeiros");
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         spacebethinbutons = displayMetrics.widthPixels /  20;
@@ -135,7 +133,7 @@ String entity = "Bombeiros";
 
     public void bt_voltar_onClick(View view) {
 
-        Entidades_Bombeiros.super.onBackPressed();
+        Firemen.super.onBackPressed();
     }
 
     public void btn_gps_onClick(View view) {
@@ -162,7 +160,7 @@ String entity = "Bombeiros";
 
             if( i == checkButtons.length -1 && next == false)
             {
-                Intent intent = new Intent(Entidades_Bombeiros.this, local.class);
+                Intent intent = new Intent(Firemen.this, Local.class);
                 intent.putExtra("acidents",AcidentsList);
                 intent.putExtra("entity",entity);
 

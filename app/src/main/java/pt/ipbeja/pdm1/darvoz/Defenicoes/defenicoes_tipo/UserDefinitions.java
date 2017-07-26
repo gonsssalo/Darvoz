@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import java.util.Objects;
 
-import pt.ipbeja.pdm1.darvoz.Database.DatabaseOperacions;
+import pt.ipbeja.pdm1.darvoz.Database.OperationsDatabase;
 import pt.ipbeja.pdm1.darvoz.R;
 
-public class DefenicoesUtilizador extends AppCompatActivity {
+public class UserDefinitions extends AppCompatActivity {
 
     EditText USER_NAME, USER_ADRESS, CONTACT_PERSON, CELFONE_CONTACT_PERSON;
     String userName, userAdress, contactPerson, celfoneContacPerson;
@@ -24,6 +24,8 @@ public class DefenicoesUtilizador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defenisoes_utilizador);
 
+
+        getSupportActionBar().setTitle("Darvoz - Defenições Utilizador");
         USER_NAME = (EditText) findViewById(R.id.UserNameEdictText);
         USER_ADRESS = (EditText) findViewById(R.id.UserAdressEdictText);
         CONTACT_PERSON = (EditText) findViewById(R.id.ContactPersonEdictText);
@@ -36,7 +38,7 @@ public class DefenicoesUtilizador extends AppCompatActivity {
     public void getUserInfo () {
 
         try {
-            DatabaseOperacions DOP = new DatabaseOperacions(this);
+            OperationsDatabase DOP = new OperationsDatabase(this);
             Cursor CR = DOP.getUserInformation(DOP);
             CR.moveToFirst();
 
@@ -88,11 +90,11 @@ public class DefenicoesUtilizador extends AppCompatActivity {
 
 
 
-            DatabaseOperacions DB = new DatabaseOperacions(this);
+            OperationsDatabase DB = new OperationsDatabase(this);
             DB.delete_inf_user(DB);
             DB.insertInfoUser(DB, userName, userAdress, contactPerson, celfoneContacPerson);
 
-            DefenicoesUtilizador.super.onBackPressed();
+            UserDefinitions.super.onBackPressed();
         }
     }
 

@@ -13,7 +13,7 @@ import pt.ipbeja.pdm1.darvoz.Database.tables.tableEntityData;
  * Created by Utilizador on 17/04/2017.
  */
 
-public class DatabaseOperacions extends SQLiteOpenHelper {
+public class OperationsDatabase extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Database";
     public static int database_version = 17;
@@ -37,13 +37,6 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
                     + tableEntityData.TableInfo.CONTACT_2INTERPRETER + " TEXT );";
 
 
-
-    public DatabaseOperacions(Context context) {
-        super(context, DATABASE_NAME, null, database_version);
-
-
-    }
-
     @Override
     public void onCreate(SQLiteDatabase sqldb) {
 
@@ -51,6 +44,13 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
         sqldb.execSQL(TableUser);
 
     }
+    public OperationsDatabase(Context context) {
+        super(context, DATABASE_NAME, null, database_version);
+
+
+    }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -64,8 +64,8 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
     }
 
 
-    public void insertInfoUser(DatabaseOperacions dop, String UserName, String UserAdress, String ContactPerson, String CelfoneContactPerson )
-
+    public void insertInfoUser(OperationsDatabase dop, String UserName, String UserAdress, String ContactPerson,
+                               String CelfoneContactPerson )
     {
         SQLiteDatabase SQ = dop.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -79,10 +79,9 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
         Log.d("Database Operacions", "one raw inserted");
     }
 
-    public void insertInfoEntity(DatabaseOperacions dop, String contact_firifighters,
+    public void insertInfoEntity(OperationsDatabase dop, String contact_firifighters,
                                  String contact_PSP, String contact_1GNR, String contact_2GNR,
                                  String contact_1interpreter, String contact_2interpreter)
-
     {
         SQLiteDatabase SQ = dop.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -99,7 +98,7 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
     }
 
 
-    public Cursor getUserInformation(DatabaseOperacions dop)
+    public Cursor getUserInformation(OperationsDatabase dop)
     {
 
         SQLiteDatabase SQ = dop.getReadableDatabase();
@@ -114,7 +113,7 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
         return CR;
     }
 
-    public Cursor getEntityInformation(DatabaseOperacions dop)
+    public Cursor getEntityInformation(OperationsDatabase dop)
     {
 
         SQLiteDatabase SQ = dop.getReadableDatabase();
@@ -130,15 +129,37 @@ public class DatabaseOperacions extends SQLiteOpenHelper {
         Cursor CR = SQ.query(tableEntityData.TableInfo.TABLE_Entitys,coloums,null, null, null, null, null);
         return CR;
     }
+    public Cursor getUserAdress(OperationsDatabase dop)
+    {
 
-    public void delete_inf_user (DatabaseOperacions dop){
+        SQLiteDatabase SQ = dop.getReadableDatabase();
+
+        String[] coloums = {tableUserData.TableInfo.ADRESS_USER};
+
+        Cursor CR = SQ.query(tableUserData.TableInfo.TABLE_USER,coloums,null, null, null, null, null);
+        return CR;
+    }
+    public Cursor getEntityInterpreters(OperationsDatabase dop)
+    {
+
+        SQLiteDatabase SQ = dop.getReadableDatabase();
+
+        String[] coloums = {
+                tableEntityData.TableInfo.CONTACT_1INTERPRETER,
+                tableEntityData.TableInfo.CONTACT_2INTERPRETER};
+
+        Cursor CR = SQ.query(tableEntityData.TableInfo.TABLE_Entitys,coloums,null, null, null, null, null);
+        return CR;
+    }
+
+    public void delete_inf_user (OperationsDatabase dop){
 
         SQLiteDatabase SQ = dop.getWritableDatabase();
         SQ.execSQL("delete from "+ tableUserData.TableInfo.TABLE_USER);
 
     }
 
-    public void delete_inf_Entity (DatabaseOperacions dop){
+    public void delete_inf_Entity (OperationsDatabase dop){
 
         SQLiteDatabase SQ = dop.getWritableDatabase();
         SQ.execSQL("delete from "+ tableEntityData.TableInfo.TABLE_Entitys);

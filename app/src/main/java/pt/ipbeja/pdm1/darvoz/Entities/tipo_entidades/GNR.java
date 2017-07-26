@@ -1,4 +1,4 @@
-package pt.ipbeja.pdm1.darvoz.Entidades.tipo_entidades;
+package pt.ipbeja.pdm1.darvoz.Entities.tipo_entidades;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +11,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pt.ipbeja.pdm1.darvoz.Entidades.local;
+import pt.ipbeja.pdm1.darvoz.Entities.Local;
 import pt.ipbeja.pdm1.darvoz.R;
 
-public class Entidades_GNR extends AppCompatActivity {
+public class GNR extends AppCompatActivity {
     ImageButton imgBtn;
     public static boolean next = true;
-    String entity = "GNR";
+    int entity = 2;
     int Bottonsize;
     int spacebethinbutons;
     android.widget.LinearLayout.LayoutParams lp;
@@ -51,6 +51,7 @@ public class Entidades_GNR extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entidades__gnr);
 
+        getSupportActionBar().setTitle("Darvoz - GNR");
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         spacebethinbutons = displayMetrics.widthPixels /  20;
@@ -110,7 +111,7 @@ public class Entidades_GNR extends AppCompatActivity {
 
             if( i == checkButtons.length -1 && next == false)
             {
-                Intent intent = new Intent(Entidades_GNR.this, local.class);
+                Intent intent = new Intent(GNR.this, Local.class);
                 intent.putExtra("acidents",AcidentsList);
                 intent.putExtra("entity",entity);
                 startActivity(intent);
@@ -119,8 +120,7 @@ public class Entidades_GNR extends AppCompatActivity {
 
             }
 
-        }//ciclo for
-
+        }//end ciclo for
 
 
     }
@@ -130,7 +130,7 @@ public class Entidades_GNR extends AppCompatActivity {
 
     public void bt_voltar_onClick(View view) {
 
-        Entidades_GNR.super.onBackPressed();
+        GNR.super.onBackPressed();
     }
 
     public void btn_colisao_onClick(View view) {

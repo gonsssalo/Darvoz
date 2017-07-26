@@ -1,74 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pt.ipbeja.pdm1.darvoz">
+package="pt.ipbeja.pdm1.darvoz">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.SEND_SMS"/>
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+        android:name=".MainActivity"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Defenicoes.listDefenicoes"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Marcasao.Marcasao"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Defenicoes.defenicoes_tipo.DefenicoesUtilizador"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Defenicoes.defenicoes_tipo.DefenicoesEntidades"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Entidades.Entidades"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Entidades.tipo_entidades.Entidades_Bombeiros"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Entidades.tipo_entidades.Entidades_PSP"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Entidades.tipo_entidades.Entidades_GNR"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Entidades.local"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Creditos"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Mapa" />
-        <!--
+
+
+    <activity
+        android:name=".Defenicoes.DefinitionsList"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Marking.Marking"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Defenicoes.defenicoes_tipo.UserDefinitions"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Defenicoes.defenicoes_tipo.EntitiyDefinitions"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Entities.Entidades"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Entities.tipo_entidades.Firemen"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Entities.tipo_entidades.PSP"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name=".Entities.tipo_entidades.GNR"
+        android:screenOrientation="portrait" />
+    <activity android:name=".Entities.Local"
+
+        android:screenOrientation="portrait"/>
+    <activity android:name=".Entities.Mapa" />
+    <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCgE37C43uBYY_ZnZGKffOTpfTPySF-zY0" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCgE37C43uBYY_ZnZGKffOTpfTPySF-zY0" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-    </application>
+    <activity android:name=".Entities.MapsActivity" android:label="@string/title_activity_maps"></activity>
+    <activity android:name=".Credits"
+        android:screenOrientation="portrait"/>
+</application>
 
 </manifest>

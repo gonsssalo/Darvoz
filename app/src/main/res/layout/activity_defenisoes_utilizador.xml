@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="top"
     android:orientation="vertical"
-    tools:context="pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.DefenicoesUtilizador">
+    tools:context="pt.ipbeja.pdm1.darvoz.Defenicoes.defenicoes_tipo.UserDefinitions">
 
     <!-- Nome do utilizador -->
     <LinearLayout

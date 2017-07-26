@@ -1,9 +1,10 @@
-package pt.ipbeja.pdm1.darvoz.Marcasao;
+package pt.ipbeja.pdm1.darvoz.Marking;
 
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -18,18 +19,20 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Objects;
 
+import pt.ipbeja.pdm1.darvoz.Database.OperationsDatabase;
 import pt.ipbeja.pdm1.darvoz.R;
 
 
 
-public class Marcasao extends AppCompatActivity {
+public class Marking extends AppCompatActivity {
     DatePickerDialog datePickerDialog;
     TimePickerDialog mTimePicker;
 
     TextView txvw_Entidade;
     TextView txvw_Data;
     TextView txvw_Hora;
-
+    String GetContact_1interpreter;
+    String GetContact_2interpreter;
 
     int checkButtonStatus;
     Boolean checkButton [] = new Boolean[]{false, false, false, false, false};
@@ -38,6 +41,8 @@ public class Marcasao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marcasao);
+
+        getSupportActionBar().setTitle("Darvoz - Marcação");
 
         txvw_Data = (TextView) findViewById(R.id.textViewData);
         txvw_Hora = (TextView) findViewById(R.id.textViewHora);
@@ -52,7 +57,7 @@ public class Marcasao extends AppCompatActivity {
         int mMonth = c.get(Calendar.MONTH); // current month
         int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
         // date picker dialog
-        datePickerDialog = new DatePickerDialog(Marcasao.this,
+        datePickerDialog = new DatePickerDialog(Marking.this,
                 new DatePickerDialog.OnDateSetListener() {
 
                     @Override
@@ -69,6 +74,21 @@ public class Marcasao extends AppCompatActivity {
 
     }
 
+    public void btn_select_hora_onClick(View view) {
+
+        Calendar mcurrentTime = Calendar.getInstance();
+        int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+        int minute = mcurrentTime.get(Calendar.MINUTE);
+        mTimePicker = new TimePickerDialog(Marking.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                txvw_Hora.setText(selectedHour + ":" + selectedMinute);
+            }
+        }, hour, minute, true);//Yes 24 hour time
+        mTimePicker.setTitle("Selecione a Hora");
+        mTimePicker.show();
+
+    }
     public void changebutton(int buttonArraynumber,int imageviewReference , int imageReferenceN1, int imageReferenceN2, String Entity)
     {
         for(int i = 0; i < checkButton.length; i++){
@@ -118,10 +138,7 @@ public class Marcasao extends AppCompatActivity {
 
     public void btn_ss_onClick(View view) {
 
-
         changebutton(0,R.id.imbtn_seguransa_social , R.drawable.btn_seguransa_social_p, R.drawable.btn_seguransa_social_b, "Segurança Social");
-
-
 
     }
 
@@ -150,25 +167,11 @@ public class Marcasao extends AppCompatActivity {
 
     }
 
-    public void btn_select_hora_onClick(View view) {
 
-        Calendar mcurrentTime = Calendar.getInstance();
-        int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-        int minute = mcurrentTime.get(Calendar.MINUTE);
-        mTimePicker = new TimePickerDialog(Marcasao.this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                txvw_Hora.setText(selectedHour + ":" + selectedMinute);
-            }
-        }, hour, minute, true);//Yes 24 hour time
-        mTimePicker.setTitle("Selecione a Hora");
-        mTimePicker.show();
-
-    }
 
     public void btn_voltar_onClick(View view) {
 
-        Marcasao.super.onBackPressed();
+        Marking.super.onBackPressed();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -205,13 +208,29 @@ public class Marcasao extends AppCompatActivity {
        if(smsSend){
 
             String sms = "pede marcação para atendimento na " + entidade + " para o dia " + data + " às " + hora + "H";
-
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + 926345258 + ";" + 926345258));
+           getEntityInterpreters ();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + GetContact_1interpreter + ";" + GetContact_2interpreter));
             intent.putExtra("sms_body", sms);
             startActivity(intent);
 
         }
 
 
+    }
+
+    public void getEntityInterpreters () {
+
+        try {
+            OperationsDatabase DOP = new OperationsDatabase(this);
+            Cursor CR = DOP.getEntityInformation(DOP);
+            CR.moveToFirst();
+
+            GetContact_1interpreter = CR.getString(0);
+            GetContact_2interpreter = CR.getString(1);
+
+
+        }
+        catch (Exception ignored)
+        {}
     }
 }
