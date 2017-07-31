@@ -15,10 +15,12 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,76 +58,9 @@ public class Local extends AppCompatActivity implements LocationListener {
     String GetCelfoneContacPerson;
     public static final int REQUEST_CODE = 1;
 
-
-    private static final int MAX_SMS_MESSAGE_LENGTH = 160;
-    private static final int SMS_PORT = 8901;
-    private static final String SMS_DELIVERED = "SMS_DELIVERED";
-    private static final String SMS_SENT = "SMS_SENT";
-
-    private void sendSms(String phonenumber,String message) {
-
-        SmsManager manager = SmsManager.getDefault();
-        PendingIntent piSend = PendingIntent.getBroadcast(this, 0, new Intent(SMS_SENT), 0);
-        PendingIntent piDelivered = PendingIntent.getBroadcast(this, 0, new Intent(SMS_DELIVERED), 0);
-
-        byte[] data = new byte[message.length()];
-
-        for(int index=0; index<message.length() && index < MAX_SMS_MESSAGE_LENGTH; ++index)
-        {
-            data[index] = (byte)message.charAt(index);
-        }
-
-        manager.sendDataMessage(phonenumber, null, (short) SMS_PORT, data,piSend, piDelivered);
-
-    }
-
-
-
-    private BroadcastReceiver sendreceiver = new BroadcastReceiver()
-    {
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            String info = "Send information: ";
-
-            switch(getResultCode())
-            {
-                case Activity.RESULT_OK: info += "send successful"; break;
-                case SmsManager.RESULT_ERROR_GENERIC_FAILURE: info += "send failed, generic failure"; break;
-                case SmsManager.RESULT_ERROR_NO_SERVICE: info += "send failed, no service"; break;
-                case SmsManager.RESULT_ERROR_NULL_PDU: info += "send failed, null pdu"; break;
-                case SmsManager.RESULT_ERROR_RADIO_OFF: info += "send failed, radio is off"; break;
-            }
-
-            Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
-
-        }
-    };
-
-    private BroadcastReceiver deliveredreceiver = new BroadcastReceiver()
-    {
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            String info = "Delivery information: ";
-
-            switch(getResultCode())
-            {
-                case Activity.RESULT_OK: info += "delivered"; break;
-                case Activity.RESULT_CANCELED: info += "not delivered"; break;
-            }
-
-            Toast.makeText(getBaseContext(), info, Toast.LENGTH_SHORT).show();
-        }
-    };
-
-
-
-
-
-
     ArrayList<String> AcidentsList;
     int checkButtonStatus;
+
     Boolean checkButtonLocation[] = new Boolean[]{false, false, false, false, false,
                                                   false, false, false, false, false,
                                                   false, false, false};
@@ -138,6 +73,8 @@ public class Local extends AppCompatActivity implements LocationListener {
             " da Escola Mário Beirão", " da Escola Diogo Gouveia", "do Continente", "do IPBeja"
     };
     Boolean checkButtons [] = new Boolean[]{false, false, false, false};
+
+    Boolean gpsBotton = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,8 +88,32 @@ public class Local extends AppCompatActivity implements LocationListener {
         Intent inten = getIntent();
         entity = inten.getIntExtra("entity",0);
 
+
+        CheckGPS();
+
     }
 
+    public void CheckGPS (){
+        LinearLayout layoutGPS = (LinearLayout) findViewById(R.id.layoutGPS);
+
+        final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
+        if ( !manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) {
+            gpsBotton = false;
+
+            ImageButton imageButtonname = (ImageButton) findViewById(R.id.imageButtonGPS);
+
+            imageButtonname.setBackgroundResource(R.drawable.bt_gps_off);
+            layoutGPS.setVisibility(LinearLayout.GONE);
+        }
+        else{
+            gpsBotton = true;
+            ImageButton imageButtonname = (ImageButton) findViewById(R.id.imageButtonGPS);
+
+            imageButtonname.setBackgroundResource(R.drawable.bt_gps_on);
+            layoutGPS.setVisibility(LinearLayout.VISIBLE);
+        }
+    }
     public boolean isGPSEnabled (Context mContext){
         LocationManager locationManager = (LocationManager)
                 mContext.getSystemService(Context.LOCATION_SERVICE);
@@ -431,7 +392,7 @@ public class Local extends AppCompatActivity implements LocationListener {
 
         if (isGPSEnabled(this) == true) {
             if (location == null) {
-                Toast.makeText(this, "No Location found", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Nenhuma localização encontrada", Toast.LENGTH_SHORT).show();
 
             } else {
                 double latitude = location.getLatitude();
@@ -449,17 +410,17 @@ public class Local extends AppCompatActivity implements LocationListener {
                             strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("");
                         }
                         streetAdress = strReturnedAddress.toString();
-                        Toast.makeText(Local.this, "Adresse Found " + strReturnedAddress.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Local.this, "Endereço encontrado " + strReturnedAddress.toString(), Toast.LENGTH_SHORT).show();
                         // et_lugar.setText(strReturnedAddress.toString());
                         ed.setText("" + strReturnedAddress.toString() + "\n" + latitude + longitude);
                     } else {
-                        Toast.makeText(Local.this, "No Address returned!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Local.this, "Nenhuma localização encontrada", Toast.LENGTH_SHORT).show();
 
                     }
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
-                    Toast.makeText(Local.this, "Canont get Address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Local.this, "Não é possível obter o endereço!", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -679,5 +640,27 @@ public class Local extends AppCompatActivity implements LocationListener {
     @Override
     public void onProviderDisabled(String s) {
 
+    }
+
+    public void btn_turn_gps_onClick(View view) {
+
+        Intent gpsOptionsIntent = new Intent(
+                android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(gpsOptionsIntent);
+
+        CheckGPS();
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        CheckGPS();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        CheckGPS();
     }
 }

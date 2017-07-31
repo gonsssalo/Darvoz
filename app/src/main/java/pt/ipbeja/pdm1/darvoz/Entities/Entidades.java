@@ -41,12 +41,7 @@ public class Entidades extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void btn_GPS_onClick(View view) {
 
-       startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-
-
-    }
 
     public void btn_Voltar_onClick(View view) {
 

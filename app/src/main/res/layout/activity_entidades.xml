@@ -134,26 +134,7 @@
                 tools:textSize="14sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="bottom|center"
-            android:orientation="vertical">
 
-            <ImageButton
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/bt_gps_off"
-                android:onClick="btn_GPS_onClick"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GPS"
-                android:textColor="@android:color/background_dark"
-                tools:textSize="14sp" />
-        </LinearLayout>
     </LinearLayout>
 
 

@@ -136,8 +136,7 @@ int entity = 0;
         Firemen.super.onBackPressed();
     }
 
-    public void btn_gps_onClick(View view) {
-    }
+
     public void btn_onde_onClick(View view) {
 
         ArrayList<String> AcidentsList = new ArrayList<String>();

@@ -126,8 +126,7 @@ public class PSP extends AppCompatActivity {
 
     }
 
-    public void btn_gps_onClick(View view) {
-    }
+
 
     public void bt_voltar_onClick(View view) {
 
